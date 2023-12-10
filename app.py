@@ -11,8 +11,8 @@ CORS(app, supports_credentials=True)
 load_dotenv()
 try:
     client = OpenAI(api_key=os.getenv('OPENAI_API_KEY'))
-except:
-    print("Error: Please set your OpenAI API key in the .env file.")
+except Exception as e:
+    print(f"Error initializing OpenAI client: {e}")
 
 # Function to read text from a Markdown file and return it as a string
 def read_markdown_file(file_path):
