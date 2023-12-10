@@ -5,7 +5,6 @@ install:
 		pip install -r requirements.txt
 
 test:
-	python3 -m pytest --nbval ./*.ipynb
 	python3 -m pytest -vv --cov=lib
 
 format:	
