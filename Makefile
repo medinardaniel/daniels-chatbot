@@ -10,10 +10,8 @@ test:
 
 format:	
 	black ./*.py
-	nbqa black ./*.ipynb 
 
 lint:
-	nbqa ruff ./*.ipynb
 	ruff check ./*.py
 		
 all: install lint test format
