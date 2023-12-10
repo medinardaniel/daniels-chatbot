@@ -54,7 +54,6 @@ def chat():
         # Check if the reply is empty, indicating the question may be out of context
         if not response:
             response = "I am sorry, but I am not equipped to answer that question."
-
     except Exception as e:
         print("In Exception!")
         return jsonify({"error": str(e)}), 500
