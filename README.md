@@ -1,6 +1,6 @@
 # Daniel's Chatbot
 
-![GitHub Actions status](https://github.com/danielmedina/daniels-chatbot/workflows/ci.yml/badge.svg)
+![GitHub Actions status](https://github.com/danielmedina/daniels-chatbot/workflows/CI/badge.svg)
 
 ## Overview
 Daniel's Chatbot is a web-based application designed to interact with users through a chat interface. The application utilizes OpenAI's GPT-3 model to process user queries and generate intelligent responses. Built with Flask, a Python web framework, this chatbot serves as an efficient tool for handling user queries based on provided context.
