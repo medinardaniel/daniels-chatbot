@@ -1,12 +1,15 @@
 # test_app.py
 
+import pytest
 import app
-import json
 
-def test_chat():
-    app.app.testing = True
-    client = app.app.test_client()
+@pytest.fixture
+def client():
+    app.app.config['TESTING'] = True
+    with app.app.test_client() as client:
+        yield client
 
+def test_chat(client):
     # Send a POST request to the /chat endpoint with a JSON payload
     response = client.post('/chat', json={'message': 'Hello'})
 
@@ -14,7 +17,7 @@ def test_chat():
     assert response.status_code == 200
 
     # Parse the response JSON
-    data = json.loads(response.data)
+    data = response.get_json()
 
     # Assert that the response contains the 'response' key
     assert 'response' in data
