@@ -10,7 +10,7 @@ CORS(app, supports_credentials=True)
 # Load .env file
 load_dotenv()
 try:
-    client = OpenAI(api_key=os.getenv('OPENAI_API_KEY'))
+    client = OpenAI()
 except Exception as e:
     print(f"Error initializing OpenAI client: {e}")
 
