@@ -56,6 +56,7 @@ def chat():
             response = "I am sorry, but I am not equipped to answer that question."
     except Exception as e:
         print("In Exception!")
+        print(e)
         return jsonify({"error": str(e)}), 500
 
     return jsonify({"response": response})
